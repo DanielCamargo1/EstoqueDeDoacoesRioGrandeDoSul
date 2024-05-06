@@ -1,13 +1,15 @@
 ﻿@model DoacoesModel
 @{
-    ViewData["title"] = "Cadastrar Item";
+    ViewData["title"] = "Editar Item";
 }
 <div class="mb-5 text-center">
     <h1>Editar Itens</h1>
 </div>
 
 <form method="post" asp-controller="Estoque" asp-action="Cadastrar">
+    <input type="hidden" asp-for="Id"/>
     <div class="row mb-3">
+        
         <label for="Item" class="col-sm-2 col-form-label">Item</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" asp-for="NomeDoItem" id="Item" placeholder="Ex: Cesta Básica">
@@ -48,12 +50,12 @@
                     Outros
                 </label>
             </div>
-            
+
         </div>
     </fieldset>
-   <div class="d-flex gap-5 mt-5">
-        <button type="submit" class="btn btn-success w-50">Cadastrar</button>
+    <div class="d-flex gap-5 mt-5">
+        <button type="submit" class="btn btn-success w-50">Editar</button>
         <a class="btn btn-primary w-50" asp-controller="Estoque" asp-action="Index">Voltar</a>
-   </div>
-    
+    </div>
+
 </form>

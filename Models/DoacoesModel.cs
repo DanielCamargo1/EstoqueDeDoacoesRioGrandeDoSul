@@ -8,8 +8,8 @@ namespace GerenciamentoDeEstoqueDoacoes.Models
         public int Id { get; set; }
         [Required(ErrorMessage ="Digite o nome do item")]
         public string NomeDoItem { get; set; }
-        [Required(ErrorMessage = "Digite a quantidade")]
 
+        [Required(ErrorMessage = "Digite a quantidade")]
         public int Quantidade { get; set; }
 
         public bool EmEstoque { get; set; }
