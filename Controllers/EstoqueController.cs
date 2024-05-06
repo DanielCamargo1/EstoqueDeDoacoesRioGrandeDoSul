@@ -62,7 +62,7 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
 
 
         [HttpPost]
-        public IActionResult Cadastrar(DoacoesModel doacoes) 
+        public IActionResult Cadastrar(DoacoesModel doacoes)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             return View();
         }
 
-      
+
         [HttpPost]
         public IActionResult Editar(DoacoesModel doacoes)
         {
@@ -90,15 +90,15 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
         [HttpPost]
         public IActionResult Excluir(DoacoesModel doacoes)
         {
-            if (doacoes != null)
+            if (doacoes == null)
             {
-                _context.Doacoes.Remove(doacoes);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return NotFound();
-        }
+                return NotFound();
 
+            }
+            _context.Doacoes.Remove(doacoes);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }

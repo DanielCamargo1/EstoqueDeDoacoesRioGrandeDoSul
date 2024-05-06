@@ -12,20 +12,20 @@
 
         <label for="Item" class="col-sm-2 col-form-label">Item</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" asp-for="NomeDoItem" id="Item" placeholder="Ex: Cesta Básica">
+            <input type="text" class="form-control" asp-for="NomeDoItem" id="Item" placeholder="Ex: Cesta Básica" disabled>
             <span class="text-danger" asp-validation-for="NomeDoItem"></span>
         </div>
     </div>
     <div class="row mb-3">
         <label for="Quantidade" class="col-sm-2 col-form-label">Quantidade</label>
         <div class="col-sm-10">
-            <input type="number" class="form-control" asp-for="Quantidade" id="Quantidade" placeholder="Ex.: 2">
+            <input type="number" class="form-control" asp-for="Quantidade" id="Quantidade" placeholder="Ex.: 2" disabled>
             <span class="text-danger" asp-validation-for="Quantidade"></span>
         </div>
     </div>
 
     <div class="d-flex gap-5 mt-5">
-        <a class="btn btn-danger w-50" asp-controller="Estoque" asp-action="Excluir">Excluir</a>
+        <button type="submit" class="btn btn-danger w-50" asp-controller="Estoque" asp-action="Excluir">Excluir</button>
         <a class="btn btn-primary w-50" asp-controller="Estoque" asp-action="Index">Voltar</a>
     </div>
 </form>
