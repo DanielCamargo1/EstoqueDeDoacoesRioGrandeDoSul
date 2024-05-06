@@ -1,24 +1,22 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model DoacoesModel
 @{
     ViewData["title"] = "Cadastrar Item";
 }
-<form>
+<form method="post" asp-controller="Estoque" asp-action="Cadastrar">
     <div class="row mb-3">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+        <label for="Item" class="col-sm-2 col-form-label">Item</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3">
+            <input type="text" class="form-control" asp-for="NomeDoItem" id="Item" placeholder="Ex: Cesta Básica">
         </div>
     </div>
     <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        <label for="Quantidade" class="col-sm-2 col-form-label">Quantidade</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3">
+            <input type="number" class="form-control" asp-for="Quantidade" id="Quantidade" placeholder="Ex.: 2">
         </div>
     </div>
     <fieldset class="row mb-3">
-        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+        <legend class="col-form-label col-sm-2 pt-0">Tipo da doação</legend>
         <div class="col-sm-10">
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
@@ -33,20 +31,23 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                <label class="form-check-label" for="gridRadios3">
                     Alimentos
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                <label class="form-check-label" for="gridRadios4">
                     Outros
                 </label>
             </div>
             
         </div>
     </fieldset>
-   
-    <button type="submit" class="btn btn-primary">Sign in</button>
+   <div class="d-flex gap-5 mt-5">
+        <button type="submit" class="btn btn-success w-50">Cadastrar</button>
+        <a class="btn btn-primary w-50" asp-controller="Estoque" asp-action="Index">Voltar</a>
+   </div>
+    
 </form>

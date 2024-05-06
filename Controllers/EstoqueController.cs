@@ -25,5 +25,18 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Cadastrar(DoacoesModel doacoes) 
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Doacoes.Add(doacoes);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

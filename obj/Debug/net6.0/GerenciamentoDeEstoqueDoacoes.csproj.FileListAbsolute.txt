@@ -40,3 +40,4 @@ C:\Users\danid\source\repos\GerenciamentoDeEstoqueDoacoes\GerenciamentoDeEstoque
 C:\Users\danid\source\repos\GerenciamentoDeEstoqueDoacoes\GerenciamentoDeEstoqueDoacoes\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\danid\source\repos\GerenciamentoDeEstoqueDoacoes\GerenciamentoDeEstoqueDoacoes\obj\Debug\net6.0\GerenciamentoDeEstoqueDoacoes.csproj.AssemblyReference.cache
 C:\Users\danid\source\repos\GerenciamentoDeEstoqueDoacoes\GerenciamentoDeEstoqueDoacoes\obj\Debug\net6.0\GerenciamentoDeEstoqueDoacoes.csproj.CopyComplete
+C:\Users\danid\source\repos\GerenciamentoDeEstoqueDoacoes\GerenciamentoDeEstoqueDoacoes\obj\Debug\net6.0\GerenciamentoDeEstoqueDoacoes.sourcelink.json
