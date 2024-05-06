@@ -26,6 +26,41 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Editar(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var doacao = _context.Doacoes.FirstOrDefault(x => x.Id == id);
+
+            if (doacao == null)
+            {
+                return NotFound();
+            }
+            return View(doacao);
+        }
+
+        [HttpGet]
+        public IActionResult Excluir(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var doacao = _context.Doacoes.FirstOrDefault(x => x.Id == id);
+
+            if (doacao == null)
+            {
+                return NotFound();
+            }
+            return View(doacao);
+        }
+
+
         [HttpPost]
         public IActionResult Cadastrar(DoacoesModel doacoes) 
         {
@@ -39,34 +74,31 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Editar( int? id)
-        {
-            if(id == null || id == 0)
-            {
-                return NotFound();
-            }
-
-            DoacoesModel doacao = _context.Doacoes.FirstOrDefault(x => x.Id == id);
-
-            if(doacao == null)
-            {
-                return NotFound();
-            }
-            return View(doacao);
-        }
-
+      
         [HttpPost]
         public IActionResult Editar(DoacoesModel doacoes)
         {
             if (ModelState.IsValid)
             {
-                var doacao = _context.Doacoes.Update(doacoes);
+                _context.Doacoes.Update(doacoes);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(doacoes);
         }
-       
+
+        [HttpPost]
+        public IActionResult Excluir(DoacoesModel doacoes)
+        {
+            if (doacoes != null)
+            {
+                _context.Doacoes.Remove(doacoes);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return NotFound();
+        }
+
+
     }
 }
