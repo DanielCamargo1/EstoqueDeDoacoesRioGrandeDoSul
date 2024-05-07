@@ -1,6 +1,9 @@
 ﻿@model DoacoesModel
+
+
 @{
     ViewData["Title"] = "Home Page";
+    
 }
 
 <div class="text-center">
@@ -8,4 +11,11 @@
     <p>Site gerenciamento de estoque de ajuda ao irmãos do rio Grande Do Sul</p>
 </div>
 
-<h2>Foram feito: 3 doações</h2>
+@if (Model != null) 
+{
+    <h2>Foram feito: @Model.Quantidade doações</h2>
+}
+else
+{
+    <h2>Número de doações indisponivel.</h2>
+}

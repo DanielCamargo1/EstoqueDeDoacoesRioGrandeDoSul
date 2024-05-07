@@ -1,0 +1,13 @@
+﻿@model DoacoesModel
+@{
+    ViewData["title"] = "Enviar Item";
+}
+<h1>Enviar Doação</h1>
+
+<p>Nome do Item: @Model.NomeDoItem</p>
+<p>Quantidade: @Model.Quantidade</p>
+<p>Horário da Doação: @Model.HorarioDoacao</p>
+
+<form asp-action="Enviar" asp-route-id="@Model.Id" method="post">
+    <input type="submit" value="Confirmar Envio" class="btn btn-success" />
+</form>

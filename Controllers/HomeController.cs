@@ -1,4 +1,5 @@
-﻿using GerenciamentoDeEstoqueDoacoes.Models;
+﻿using GerenciamentoDeEstoqueDoacoes.Data;
+using GerenciamentoDeEstoqueDoacoes.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,9 +7,10 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult Index()
         {
-            return View();
+           return View();
         }
 
         public IActionResult Privacy()

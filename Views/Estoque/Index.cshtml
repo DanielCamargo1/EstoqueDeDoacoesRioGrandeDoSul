@@ -25,7 +25,11 @@
                     <tr>
                         <th scope="row">@doacao.NomeDoItem</th>
                         <td>@doacao.Quantidade</td>
-                        <td>@doacao.Entrege</td>
+                        <td>@if (doacao.Entrege == true)
+                            {
+                                <text >Enviado!</text>
+                            }
+                        </td>
                         <td>@doacao.HorarioDoacao</td>
 
                         <td>

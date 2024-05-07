@@ -1,6 +1,7 @@
 ﻿using GerenciamentoDeEstoqueDoacoes.Data;
 using GerenciamentoDeEstoqueDoacoes.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace GerenciamentoDeEstoqueDoacoes.Controllers
 {
@@ -16,8 +17,10 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
 
         public IActionResult Index()
         {
+
             IEnumerable<DoacoesModel> emprestimos = _context.Doacoes;
             return View(emprestimos);
+
         }
 
         [HttpGet]
@@ -60,6 +63,16 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             return View(doacao);
         }
 
+        [HttpGet]
+        public IActionResult Enviar(int id)
+        {
+            var doacao = _context.Doacoes.Find(id);
+            if (doacao == null)
+            {
+                return NotFound();
+            }
+            return View(doacao);
+        }
         [HttpPost]
         public IActionResult Cadastrar(DoacoesModel doacoes)
         {
@@ -67,7 +80,7 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             {
                 _context.Doacoes.Add(doacoes);
                 _context.SaveChanges();
- 
+                doacoes.Quantidade += 1;
                 return RedirectToAction("Index");
             }
             return View();
@@ -96,6 +109,23 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             _context.Doacoes.Remove(doacoes);
             _context.SaveChanges();
             return RedirectToAction("Index");
-        }  
+        }
+
+        [HttpPost]
+        public IActionResult Enviar(int? id)
+        {
+           
+            var doacao = _context.Doacoes.Find(id);
+            if (doacao == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                doacao.Entrege = true;
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
