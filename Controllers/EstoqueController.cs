@@ -13,9 +13,9 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             _context = context;
         }
 
+
         public IActionResult Index()
         {
-
             IEnumerable<DoacoesModel> emprestimos = _context.Doacoes;
             return View(emprestimos);
         }
@@ -60,7 +60,6 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             return View(doacao);
         }
 
-
         [HttpPost]
         public IActionResult Cadastrar(DoacoesModel doacoes)
         {
@@ -68,12 +67,11 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             {
                 _context.Doacoes.Add(doacoes);
                 _context.SaveChanges();
-
+ 
                 return RedirectToAction("Index");
             }
             return View();
         }
-
 
         [HttpPost]
         public IActionResult Editar(DoacoesModel doacoes)
@@ -99,6 +97,5 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }
