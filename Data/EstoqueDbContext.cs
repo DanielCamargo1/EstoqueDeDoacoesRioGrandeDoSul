@@ -10,5 +10,6 @@ namespace GerenciamentoDeEstoqueDoacoes.Data
 
         }
         public DbSet<DoacoesModel> Doacoes { get; set; }
+        public DbSet<relacoesModel> Relacoes { get; set; }
     }
 }
