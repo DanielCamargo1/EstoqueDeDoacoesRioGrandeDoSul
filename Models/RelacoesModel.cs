@@ -2,7 +2,7 @@
 
 namespace GerenciamentoDeEstoqueDoacoes.Models
 {
-    public class relacoesModel
+    public class RelacoesModel
     {
         [Key]
         public string GridRadios { get; set; }
