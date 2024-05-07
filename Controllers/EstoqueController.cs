@@ -79,7 +79,7 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             if (ModelState.IsValid)
             {
                 _context.Doacoes.Update(doacoes);
-                _context.SaveChanges();
+                _context.SaveChanges(); 
                 return RedirectToAction("Index");
             }
             return View(doacoes);
@@ -96,6 +96,6 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             _context.Doacoes.Remove(doacoes);
             _context.SaveChanges();
             return RedirectToAction("Index");
-        }
+        }  
     }
 }
