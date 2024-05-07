@@ -114,7 +114,6 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
         [HttpPost]
         public IActionResult Enviar(int? id)
         {
-           
             var doacao = _context.Doacoes.Find(id);
             if (doacao == null)
             {
