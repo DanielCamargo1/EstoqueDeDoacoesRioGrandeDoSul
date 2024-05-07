@@ -29,11 +29,15 @@
                             {
                                 <text >Enviado!</text>
                             }
+                            else
+                            {
+                                <text>Em estoque!</text>
+                            }
                         </td>
                         <td>@doacao.HorarioDoacao</td>
 
                         <td>
-                            <a asp-action="Enviar" asp-controller="Estoque" asp-route-id="@doacao.Id" class="btn btn-success">Enviar</a>
+                            <a asp-action="Enviar" asp-controller="Estoque" asp-route-id="@doacao.Id" class="btn btn-success"><i class="bi bi-airplane"></i>Enviar</a>
                             <a asp-action="Editar" asp-controller="Estoque" asp-route-id="@doacao.Id" class="btn btn-warning">Editar</a>
                             <a asp-action="Excluir" asp-controller="Estoque" asp-route-id="@doacao.Id" class="btn btn-danger">Excluir</a>
                         </td>
