@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FUr6THGQTNT087pDO45VLDvYLksBsgMBnV/RkrG4is0=",
+  "Hash": "DsJl+jxOc7mCwKZ859uKy0HYDQMSx2xrVbrXmBMQdpg=",
   "Source": "GerenciamentoDeEstoqueDoacoes",
   "BasePath": "_content/GerenciamentoDeEstoqueDoacoes",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\danid\\source\\repos\\GerenciamentoDeEstoqueDoacoes\\GerenciamentoDeEstoqueDoacoes\\wwwroot\\img\\image-removebg-preview (37).png",
+      "SourceId": "GerenciamentoDeEstoqueDoacoes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\danid\\source\\repos\\GerenciamentoDeEstoqueDoacoes\\GerenciamentoDeEstoqueDoacoes\\wwwroot\\",
+      "BasePath": "_content/GerenciamentoDeEstoqueDoacoes",
+      "RelativePath": "img/image-removebg-preview (37).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\image-removebg-preview (37).png"
     },
     {
       "Identity": "C:\\Users\\danid\\source\\repos\\GerenciamentoDeEstoqueDoacoes\\GerenciamentoDeEstoqueDoacoes\\wwwroot\\js\\site.js",
