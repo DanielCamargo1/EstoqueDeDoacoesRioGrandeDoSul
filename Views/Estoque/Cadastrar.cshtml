@@ -21,39 +21,37 @@
             <span class="text-danger" asp-validation-for="Quantidade"></span>
         </div>
     </div>
-    <fieldset class="row mb-3">
-        <legend class="col-form-label col-sm-2 pt-0">Tipo da doação</legend>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Tipo da doação</label>
         <div class="col-sm-10">
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <input class="form-check-input" type="radio" name="opcao" id="gridRadios1" value="Roupa" checked>
                 <label class="form-check-label" for="gridRadios1">
                     Roupa
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <input class="form-check-input" type="radio" name="opcao" id="gridRadios2" value="Materiais">
                 <label class="form-check-label" for="gridRadios2">
                     Materiais
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                <input class="form-check-input" type="radio" name="opcao" id="gridRadios3" value="Alimentos">
                 <label class="form-check-label" for="gridRadios3">
                     Alimentos
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                <input class="form-check-input" type="radio" name="opcao" id="gridRadios4" value="Outros">
                 <label class="form-check-label" for="gridRadios4">
                     Outros
                 </label>
             </div>
-            
         </div>
-    </fieldset>
-   <div class="d-flex gap-5 mt-5">
+    </div>
+    <div class="d-flex gap-5 mt-5">
         <button type="submit" class="btn btn-success w-50">Cadastrar</button>
         <a class="btn btn-primary w-50" asp-controller="Estoque" asp-action="Index">Voltar</a>
-   </div>
-    
+    </div>
 </form>

@@ -64,6 +64,13 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
         }
 
         [HttpGet]
+        public IActionResult ContarDoacoes()
+        {
+           
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Enviar(int id)
         {
             var doacao = _context.Doacoes.Find(id);
@@ -81,6 +88,7 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
                 _context.Doacoes.Add(doacoes);
                 _context.SaveChanges();
                 doacoes.Quantidade += 1;
+ 
                 return RedirectToAction("Index");
             }
             return View();
@@ -92,6 +100,11 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             if (ModelState.IsValid)
             {
                 _context.Doacoes.Update(doacoes);
+                if(doacoes.Entrege == false)
+                {
+                    doacoes.Entrege = false;
+                }
+                doacoes.Entrege = true;
                 _context.SaveChanges(); 
                 return RedirectToAction("Index");
             }
@@ -125,6 +138,27 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+        }
+
+        [HttpPost]
+        public IActionResult ContarDoacoes(string opc, DoacoesModel model)
+        {
+            switch (opc)
+            {
+                case "Roupa":
+                    model.contRoupa++;
+                    break;
+                case "Materiais":
+                    model.contMateriais++;
+                    break;
+                case "Alimentoa":
+                    model.contAlimento++;
+                    break;
+                case "Outros":
+                    model.contOutros++;
+                    break;
+            }
+            return View();
         }
     }
 }

@@ -15,5 +15,9 @@ namespace GerenciamentoDeEstoqueDoacoes.Models
         public bool EmEstoque { get; set; }
         public bool Entrege { get; set; }
         public DateTime HorarioDoacao { get; set; } = DateTime.Now;
+        public int contRoupa { get; set; }
+        public int contAlimento { get; set; }
+        public int contMateriais { get; set; }
+        public int contOutros { get; set; }
     }
 }
