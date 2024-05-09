@@ -18,8 +18,8 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
         public IActionResult Index()
         {
 
-            IEnumerable<DoacoesModel> emprestimos = _context.Doacoes;
-            return View(emprestimos);
+            IEnumerable<DoacoesModel> doacoes = _context.Doacoes;
+            return View(doacoes);
 
         }
 
@@ -80,6 +80,7 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             }
             return View(doacao);
         }
+
         [HttpPost]
         public IActionResult Cadastrar(DoacoesModel doacoes)
         {
@@ -88,7 +89,26 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
                 _context.Doacoes.Add(doacoes);
                 _context.SaveChanges();
                 doacoes.Quantidade += 1;
- 
+
+                string opc = Request.Form["opcao"];
+                if(opc != null)
+                {
+                    switch (opc)
+                    {
+                        case "Roupa":
+                            doacoes.contRoupa++;
+                            break;
+                        case "Materiais":
+                            doacoes.contMateriais++;
+                            break;
+                        case "Alimentos":
+                            doacoes.contAlimento++;
+                            break;
+                        case "Outros":
+                            doacoes.contOutros++;
+                            break;
+                    }
+                }
                 return RedirectToAction("Index");
             }
             return View();
@@ -140,25 +160,5 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult ContarDoacoes(string opc, DoacoesModel model)
-        {
-            switch (opc)
-            {
-                case "Roupa":
-                    model.contRoupa++;
-                    break;
-                case "Materiais":
-                    model.contMateriais++;
-                    break;
-                case "Alimentoa":
-                    model.contAlimento++;
-                    break;
-                case "Outros":
-                    model.contOutros++;
-                    break;
-            }
-            return View();
-        }
     }
 }
