@@ -64,9 +64,12 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
         }
 
         [HttpGet]
-        public IActionResult ContarDoacoes()
+        public IActionResult ContarDoacoes(DoacoesModel doacoes)
         {
-           
+            ViewBag.ContRoupa = _context.Doacoes.Sum(d => d.contRoupa);
+            ViewBag.ContMateriais = _context.Doacoes.Sum(d => d.contMateriais);
+            ViewBag.ContAlimentos = _context.Doacoes.Sum(d => d.contAlimento);
+            ViewBag.ContOutros = _context.Doacoes.Sum(d => d.contOutros);
             return View();
         }
 
@@ -80,38 +83,35 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
             }
             return View(doacao);
         }
-
         [HttpPost]
         public IActionResult Cadastrar(DoacoesModel doacoes)
         {
             if (ModelState.IsValid)
             {
+                string opc = Request.Form["opcao"];
+                switch (opc)
+                {
+                    case "Roupa":
+                        doacoes.contRoupa += doacoes.Quantidade;
+                        break;
+                    case "Materiais":
+                        doacoes.contMateriais += doacoes.Quantidade;
+                        break;
+                    case "Alimentos":
+                        doacoes.contAlimento += doacoes.Quantidade;
+                        break;
+                    case "Outros":
+                        doacoes.contOutros += doacoes.Quantidade;
+                        break;
+                    default:
+                        
+                        return BadRequest("Tipo de doação inválido.");
+                }
                 _context.Doacoes.Add(doacoes);
                 _context.SaveChanges();
-                doacoes.Quantidade += 1;
-
-                string opc = Request.Form["opcao"];
-                if(opc != null)
-                {
-                    switch (opc)
-                    {
-                        case "Roupa":
-                            doacoes.contRoupa++;
-                            break;
-                        case "Materiais":
-                            doacoes.contMateriais++;
-                            break;
-                        case "Alimentos":
-                            doacoes.contAlimento++;
-                            break;
-                        case "Outros":
-                            doacoes.contOutros++;
-                            break;
-                    }
-                }
                 return RedirectToAction("Index");
             }
-            return View();
+            return View(doacoes);
         }
 
         [HttpPost]
@@ -159,6 +159,5 @@ namespace GerenciamentoDeEstoqueDoacoes.Controllers
                 return RedirectToAction("Index");
             }
         }
-
     }
 }
