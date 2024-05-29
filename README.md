@@ -12,32 +12,24 @@ Com isso em vista a Igreja Tabernáculo da Fé Uniu suas forças e levantaram ar
 
 ## Exemplos De Funcionalidade: 👨🏼‍💻
 - **Cadastro De Doações:** Ao cadastrar uma doação, você especifica o tipo dessa doação, se é um alimento, roupa e etc... Sendo assim, ela fica armazenada no estoque:
+- - Além disso o estoque conta com as 4 operações: CRUD (Create, Read, Update e Delete). Sendo assim, nesta tela de estoque permite ver, cadastrar excluir a doação.
+  **O botão enviar!**
 
+ O Botão enviar é para dizer quando o item ja foi enviado para o rio grande do sul, se ele for enviado a mensagem " enviado! " serpa expressa, caso contrário, será mostrado "Em estoque"
 ![ImagemEstoque](wwwroot/img/Estoque.jpg)
 
-- Além disso o estoque conta com as 4 operações: CRUD (Create, Read, Update e Delete). Sendo assim, nesta tela de estoque permite ver, cadastrar excluir a doação.
 - ![Imagem Delete](wwwroot/img/EcluiItens.jpg)
 
-  **Exemplo a Classe Cliente:**
 
-  ![ImagemDoGEtClasseAgendamento](img/GetClient.jpg)
+  **Relações de Doações**
 
-
-   **Exemplo a Classe Serviço:**
-
-  ![ImagemDoGEtClasseAgendamento](img/GetService.jpg)
-
-  
-## Funcionalidades Principais
-
- - **Agendamento de Serviços:** Os clientes podem agendar serviços disponíveis.
- - **Gerenciamento de Horários:** Os provedores de serviço podem definir seus horários de disponibilidade.
- - **Administração do Sistema:** Área administrativa para gerenciar usuários, serviços e horários.
+  ![ImagemDoGEtClasseAgendamento](wwwroot/img/Relacoes.jpg)
+As relações é responsável por mostrar os números do que foram doados
 
 
 ## Tecnologias Utilizadas
 - **Linguagem de Programação:** C#
-- **Framework Web:** ASP .NET Core
+- **Framework Web:** ASP .NET MVC
 - **Banco de Dados:** MySQL
 
 ## Instalação e Configuração
@@ -51,6 +43,5 @@ Com isso em vista a Igreja Tabernáculo da Fé Uniu suas forças e levantaram ar
    - Microsoft.EntityFrameWorkCore.Design;
    - Microsoft.EntityFrameWorkCore.Tools;
    - Pomelo.EntityFrameWorkCore.MySql;
-   - AutoMapper.Extensions.Microsoft.DependencyInjecion;
  
      Agora é só rodar o projeto e testar as funcionalidades 😉
